@@ -1,6 +1,3 @@
-# sogong.4team
-소공 4팀 과제 작성
-
 package mergerGUI;
 
 import java.awt.BorderLayout;
@@ -30,12 +27,19 @@ import javax.swing.JToggleButton;
 import javax.swing.JTextField;
 import javax.swing.JList;
 import javax.swing.JScrollBar;
+import javax.swing.SwingConstants;
+import javax.swing.DropMode;
+import java.awt.Component;
+import java.awt.Rectangle;
+import java.awt.Dimension;
+import javax.swing.JScrollPane;
+import javax.swing.JComboBox;
+import javax.swing.BoxLayout;
+import javax.swing.Box;
 
 public class mergerGUI extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -73,7 +77,7 @@ public class mergerGUI extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 3, 0, 0));
 		
-		JButton btnNewButton_5 = new JButton("edit");
+		JButton btnNewButton_5 = new JButton("load");
 		panel_1.add(btnNewButton_5);
 		
 		JButton btnNewButton = new JButton("edit");
@@ -107,26 +111,43 @@ public class mergerGUI extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3, BorderLayout.CENTER);
-		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel_3.setLayout(new BoxLayout(panel_3, BoxLayout.X_AXIS));
 		
-		textField = new JTextField();
-		panel_3.add(textField);
-		textField.setColumns(10);
-		
-		JList list = new JList();
-		panel_3.add(list);
+		JTextArea textArea_1 = new JTextArea();
+		panel_3.add(textArea_1);
 		
 		JScrollBar scrollBar = new JScrollBar();
+		scrollBar.setSize(new Dimension(20, 0));
 		panel_3.add(scrollBar);
+	
 		
-		JSplitPane splitPane = new JSplitPane();
-		panel_3.add(splitPane);
+		JPanel panel_5 = new JPanel();
+		panel_5.setPreferredSize(new Dimension(14, 39));
+		panel_3.add(panel_5);
+		panel_5.setLayout(new BorderLayout(0, 0));
 		
-		textField_1 = new JTextField();
-		panel_3.add(textField_1);
-		textField_1.setColumns(10);
+		JPanel panel_6 = new JPanel();
+		panel_5.add(panel_6, BorderLayout.NORTH);
+		panel_6.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JButton btnNewButton_6 = new JButton("compare");
+		panel_6.add(btnNewButton_6);
+		
+		JPanel panel_7 = new JPanel();
+		panel_5.add(panel_7, BorderLayout.CENTER);
+		panel_7.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		JButton btnNewButton_7 = new JButton("<-");
+		panel_7.add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("->");
+		panel_7.add(btnNewButton_8);
+		
+		JTextArea textArea = new JTextArea();
+		panel_3.add(textArea);
 		
 		JScrollBar scrollBar_1 = new JScrollBar();
+		scrollBar_1.setSize(new Dimension(20, 0));
 		panel_3.add(scrollBar_1);
 	}
 
